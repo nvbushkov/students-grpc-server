@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "./studentsdb";
+
+package studentsdb;
+
+service StudentsDatabase {
+    // AddStudent
+    rpc AddStudent(Student) returns (Student) {}
+    // GetStudent
+    rpc GetStudent(Student) returns (Student) {}
+    // UpdateStudent
+    rpc UpdateStudent(Student) returns (Student) {}
+    // DeleteStudent
+    rpc DeleteStudent(Student) returns (Student) {}
+}
+
+message Student {
+    optional string name = 1;
+    optional string id = 2;
+}
